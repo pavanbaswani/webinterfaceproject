@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>IIIT-H Summer Internship</title>
+    <link rel="shortcut icon" href="includes/images/logo.jpg">
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="includes/css/bootstrap.min.css">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="includes/css/style.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Tutorial Contents</h3>
+                <strong>TC</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="./resources/home.html" class="link-ref">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="./resources/about.html" class="link-ref">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#htmlSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-code"></i>
+                        HTML
+                    </a>
+                    <ul class="collapse list-unstyled" id="htmlSubmenu">
+                        <li>
+                            <a href="./resources/html/introduction.html" class="link-ref">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="./resources/html/basic-elements.html" class="link-ref">Basic Elements</a>
+                        </li>
+                        <li>
+                            <a href="./resources/html/html-head.html" class="link-ref">HTML Head</a>
+                        </li>
+                        <li>
+                            <a href="./resources/html/input-forms.html" class="link-ref">Layouts & Forms</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#cssSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-eye"></i>
+                        CSS
+                    </a>
+                    <ul class="collapse list-unstyled" id="cssSubmenu">
+                        <li>
+                            <a href="#" class="link-ref">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">CSS Elements</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">Formating</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#jsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-code"></i>
+                        JS
+                    </a>
+                    <ul class="collapse list-unstyled" id="jsSubmenu">
+                        <li>
+                            <a href="#" class="link-ref">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">Basics</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">Event Listeners</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#bstSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-database"></i>
+                        Bootstrap 4
+                    </a>
+                    <ul class="collapse list-unstyled" id="bstSubmenu">
+                        <li>
+                            <a href="#" class="link-ref">Introduction</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">Layouts</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">Styles</a>
+                        </li>
+                        <li>
+                            <a href="#" class="link-ref">Events</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./resources/useful-references.html" class="link-ref">
+                        <i class="fas fa-book"></i>
+                        Useful References
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid text-center">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-justify"></i>
+                        <!--<span>Toggle Sidebar</span>-->
+                    </button>
+                    <h3 style="text-align: center;">Introduction to Web Technologies</h3>
+                </div>
+            </nav>
+            <div class="division-panel">
+                <iframe class="iframe" src="" id="load-content" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <!--<script src="includes/js/jquery-3.3.1.slim.min.js"></script>-->
+    <script src="includes/js/jquery-3.5.1.min.js"></script>
+    <!-- Popper.JS -->
+    <script type="text/javascript">
+        $('.link-ref').click(function(e){
+            e.preventDefault();
+            ref = this.getAttribute('href');
+            if(ref.startsWith('#')){
+                $('#load-content').hide();
+                document.getElementById('load-content').src = '';
+            }
+            else{
+                $('#load-content').show();
+                document.getElementById('load-content').src = ref;
+            }
+        });
+    </script>
+    <!--<script src="includes/js/popper.min.js"></script>-->
+    <!-- Bootstrap JS -->
+    <script src="includes/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+        /*$('.link-ref').click(function(e){
+            e.preventDefault();
+            ref = this.getAttribute('href');
+            if(ref.startsWith('#')){
+                $('#load-content').hide();
+                document.getElementById('load-content').src = '';
+            }
+            else{
+                alert(ref);
+                $('#load-content').show();
+                document.getElementById('load-content').src = ref;
+            }
+        });*/
+        
+        /*// Adjusting the iframe height onload event
+        iframe.onload = function(){
+            var iframe = document.getElementById("load-content");
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+        }*/
+    </script>
+    <!-- Font Awesome JS -->
+    <script src="includes/js/solid.js"></script>
+    <script src="includes/js/fontawesome.js"></script>
+</body>
+
+</html>
